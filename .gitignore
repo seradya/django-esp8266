@@ -1,2 +1,4 @@
-/espenv/
-/lib/
+*.pyc
+__pycache__/
+.idea/
+espenv/
