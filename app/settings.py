@@ -37,10 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #own
     'core',
-    #third
-    'rest_framework',
+    #'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -118,7 +116,13 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
+# Путь для статических файлов (css, js, img, fonts...)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static')
 
+# URL статических файлов
 STATIC_URL = '/static/'
+
+# Путь для статических файлов в разработке
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static', 'assets'),
+)

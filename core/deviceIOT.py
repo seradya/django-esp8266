@@ -2,7 +2,7 @@ import wiotp.sdk.device
 import random
 import time
 
-config = { 
+config = {
     "identity": {
         "orgId": "0k740p,",
         "typeId": "Esp8266,",

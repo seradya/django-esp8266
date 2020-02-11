@@ -1,23 +1,28 @@
 import wiotp.sdk.application
 import asyncio.events 
 
-appConfig = { 
+
+app_config = {
     "auth": {
         "key": "a-0k740p-6un1ebkdpy",
         "token": "T7(mGuyfFWzPH263)7",
     }
 }
 
-data_event = None 
 
-def EventCallback(event):
+data_event = None
+
+
+def event_callback(event):
     global data_event 
     data_event = event.data
 
+
 def get_data_device():
-    client.deviceEventCallback = EventCallback
+    client.deviceEventCallback = event_callback
     return data_event
 
-client = wiotp.sdk.application.ApplicationClient(config=appConfig)
+
+client = wiotp.sdk.application.ApplicationClient(config=app_config)
 client.connect()
 client.subscribeToDeviceEvents(msgFormat="json")
