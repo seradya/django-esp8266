@@ -13,3 +13,4 @@ def temperatura(request):
 
 def api(request):
     return JsonResponse(applicationIOT.get_data_device(), safe=False)
+
