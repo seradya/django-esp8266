@@ -1,6 +1,6 @@
 import wiotp.sdk.device
-import random
 import time
+
 
 config = {
     "identity": {
@@ -13,21 +13,25 @@ config = {
     }
 }
 
-def CommandCallback(cmd):
+
+def command_callback(cmd):
     print("Command received: %s" % cmd.data)
 
+
 def send_command():
-    Data={'status' : 'ligado'}
-    client.publishEvent(eventId="status", msgFormat="json", data=Data, qos=0, onPublish=None)
-    client.commandCallback = CommandCallback
+    dat = {'status' : 'ligado'}
+    client.publishEvent(eventId="status", msgFormat="json", data=dat, qos=0, onPublish=None)
+    client.commandCallback = command_callback
+
 
 client = wiotp.sdk.device.DeviceClient(config=config)
 client.connect()
 
+
 while True:
-    Data={'status' : 'ligado'}
-    client.publishEvent(eventId="status", msgFormat="json", data=Data, qos=0, onPublish=None)
-    client.commandCallback = CommandCallback
+    dat = {'status' : 'ligado'}
+    client.publishEvent(eventId="status", msgFormat="json", data=dat, qos=0, onPublish=None)
+    client.commandCallback = command_callback
     time.sleep(2)
 
 

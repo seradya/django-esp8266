@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from urllib.request import urlopen, Request
-from core import applicationIOT
 from django.http import JsonResponse
+from core import applicationIOT
 
 
 def temperatura(request):

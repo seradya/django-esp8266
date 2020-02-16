@@ -1,5 +1,4 @@
 import wiotp.sdk.application
-import asyncio.events 
 
 
 app_config = {
