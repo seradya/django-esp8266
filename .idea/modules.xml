@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/weather_station.iml" filepath="$PROJECT_DIR$/.idea/weather_station.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/django-esp8266.iml" filepath="$PROJECT_DIR$/.idea/django-esp8266.iml" />
     </modules>
   </component>
 </project>
