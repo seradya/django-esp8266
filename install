@@ -20,3 +20,9 @@ pip install -r requirements.txt
 
 -Запуск сервера
 py manage.py runserver
+
+-Отправка изменений
+зеленая стрелка VCS
+
+-Отправить
+Commit -> Commit and push
