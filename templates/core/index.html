@@ -1,11 +1,40 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-    <div class="w3-container">
-        <div class="w3-container w3-padding-large">
-            <div class="w3-card-4">
-                <h1 class="w3-center">Temperatura</h1>
-                <div id='myChart'></div>
+    <div class="container">
+        <div class="card-deck">
+            <div class="card">
+                <img src="{% static 'img/temp.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Температура</h5>
+                    <p class="card-text">{{ temp }}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Название карточки</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Название карточки</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to show that equal height
+                        action.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
             </div>
         </div>
     </div>

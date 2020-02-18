@@ -1,11 +1,16 @@
+# import json
 from django.shortcuts import render
 from django.http import JsonResponse
 from core import applicationIOT
 
 
-def temperatura(request):
+def weather(request):
+    data = applicationIOT.get_data_device()
+    data = eval(str(data))
+
+    temp = data['temperature']
     context = {
-        'scopo': applicationIOT.get_data_device(),
+        'temp': temp['value']
     }
     return render(request, 'core/index.html', context)
 

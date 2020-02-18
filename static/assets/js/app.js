@@ -1,4 +1,4 @@
-setInterval(ajaxCall, 1000); 
+setInterval(ajaxCall, 1000);
 /*var geral = 0;*/
 function ajaxCall() {
     $.ajax({
@@ -8,9 +8,9 @@ function ajaxCall() {
         success: function(data){
             temperature = data.temperature.value;
         }
-        
     });
 }
+
 window.feed = function(callback) {
   var tick = {};
   tick.plot0 = temperature;

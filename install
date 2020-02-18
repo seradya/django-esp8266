@@ -1,3 +1,7 @@
+Settings -> Version Control -> Git -> Path
+Settings -> Version Control -> Github -> login
+VCS -> Checkout from Version Control -> Git
+
 -Создание виртуального окружения
 python -m venv espenv
 
@@ -12,7 +16,7 @@ cd..
 cd..
 
 -Установка зависимостей
-pip install -r req.txt
+pip install -r requirements.txt
 
 -Запуск сервера
 py manage.py runserver
