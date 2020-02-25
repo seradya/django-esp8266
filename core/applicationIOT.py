@@ -9,7 +9,7 @@ app_config = {
 }
 
 
-data_event = None
+data_event = {}
 
 
 def event_callback(event):
