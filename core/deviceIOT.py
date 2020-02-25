@@ -33,5 +33,3 @@ while True:
     client.publishEvent(eventId="status", msgFormat="json", data=dat, qos=0, onPublish=None)
     client.commandCallback = command_callback
     time.sleep(2)
-
-
