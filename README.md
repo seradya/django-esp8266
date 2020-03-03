@@ -1,15 +1,28 @@
-# IoT com Django e Esp32
+Settings -> Version Control -> Git -> Path
+Settings -> Version Control -> Github -> login
+VCS -> Checkout from Version Control -> Git
 
-Conexão do sensor de temperatura DHT11 à placa ESP32 e envio dos dados da temperatura ao IBM Watson IoT Platform e a plotagem dos dados em aplicativo Django.
+-Создание виртуального окружения
+python -m venv espenv
 
-## REQUISITOS
+-Запуск виртуального окружения
+Settings -> Project Settings -> Project Interpreter
 
-* Placa ESP32 e sensor de temperatura DTH11.
-* Framework Django instalado.
-* Arduino IDE com configuração espressif para programação da placa ESP32.
-* Conta no IBM Watson IoT Platform para conexão do dispositivo ao broker MQTT.
-* VSCode instalado para edição do código python ou outra IDE de preferência.
+или
 
-### Conexão física Eps32 ao DTH11
-![alt text](https://miro.medium.com/max/1000/1*UDNpnvV2Ic5xnm4sS_jXIg.png)
+cd espenv/scripts
+activate.bat
+cd..
+cd..
 
+-Установка зависимостей
+pip install -r requirements.txt
+
+-Запуск сервера
+py manage.py runserver
+
+-Отправка изменений
+зеленая стрелка VCS
+
+-Отправить
+Commit -> Commit and push
