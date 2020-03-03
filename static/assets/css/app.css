@@ -12,3 +12,24 @@ html, body {
     display: none;
   }
   zing-grid[loading]{height:500px;}
+
+  .bg-height__10 {
+   height: 10vh;
+}
+.bg-height__20 {
+   height: 20vh;
+}
+
+.brand{
+   font-weight: bold;
+   font-size: xx-large;
+}
+
+.container-fluid {
+   padding-left: 5vw;
+   padding-right: 5vw;
+}
+
+.bg-color {
+   background-color: gray;
+}
