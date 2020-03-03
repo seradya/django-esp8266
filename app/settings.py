@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djcelery',
     'core',
 ]
 
@@ -113,3 +114,41 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static', 'assets'),
 )
+
+from datetime import timedelta
+import djcelery
+
+
+djcelery.setup_loader()
+
+REDIS_BACKEND = {
+    'HOST': 'localhost',
+    'PORT': 6379,
+    'DB': 0,
+}
+
+REDIS_BACKEND_URL = 'redis://{host}:{port}/{db}'.format(
+    host=REDIS_BACKEND['HOST'],
+    port=REDIS_BACKEND['PORT'],
+    db=REDIS_BACKEND['DB'],
+)
+
+
+CELERY_RESULT_BACKEND = 'djcelery.backends.database.DatabaseBackend'
+
+CELERY_TASK_RESULT_EXPIRES = 18000   # 5 часов
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+BROKER_URL = REDIS_BACKEND_URL
+
+CELERYBEAT_SHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+
+CELERYBEAT_SHEDULE = {
+    'greet-every-5-seconds': {
+        'task': 'testing_pizza.tasks.greet_new_orders',
+        'schedule': timedelta(seconds=5),
+    },
+}
